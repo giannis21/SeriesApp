@@ -1,5 +1,5 @@
 # SeriesApp
-MovieRama assesment using Marvel API
+SeriesApp assesment using Marvel API
 
 <b>Libraries included for this project</b><br>
  
