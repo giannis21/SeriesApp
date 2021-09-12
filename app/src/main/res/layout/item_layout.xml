@@ -34,7 +34,7 @@
             android:background="@drawable/circled_bordered"
             android:scaleType="fitXY"
             app:imageUrl="@{character}"
-            app:format="@{`portrait_small`}"
+            app:format="@{`portrait_medium`}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
