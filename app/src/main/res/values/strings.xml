@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SeriesApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="connectivity_problem">Connectivity problems\npull down to refresh</string>
+    <string name="connectivity_problem_pull_down_to_refresh">Connectivity problems\npull down to refresh</string>
+    <string name="oups_there_was_a_problem_with_the_api_call_try_again">Oups, there was a problem with the api call! Try again</string>
+    <string name="an_error_occured">Oups, an error occurred! try again later.</string>
+    <string name="tools_text">Earth\'s Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle. With a roster that has included Captain America, Iron Man…</string>
+</resources>
