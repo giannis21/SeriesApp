@@ -28,11 +28,22 @@ object BindingAdapter  {
 
     @BindingAdapter("imageUrl", "format")
     @JvmStatic
-    fun <T> loadImage(view: ImageView, character: Result, format: String) {
+    fun <T,H> loadImage(view: ImageView, character: T, format: H) {
         val progressBar: ProgressBar? = (view.parent as? ConstraintLayout)?.findViewById<ProgressBar>(R.id.progressBar)
-        loadImageGeneric(view, character, format){
-            progressBar?.visibility=View.GONE
-        }
+
+        (character as Result).apply {        //i pass T type object so to be generic and i cast it to Result in order to use its attributes
+                val url = if(!thumbnail.path.contains("https"))
+                    thumbnail.path.replace("http", "https")
+                else
+                    thumbnail.path
+
+                val completeUrl = "$url/${format.toString()}.${thumbnail.extension}"
+
+                loadImageGeneric(view, completeUrl){
+                    progressBar?.visibility=View.GONE
+                }
+            }
+
     }
 
     @BindingAdapter("setGravity")

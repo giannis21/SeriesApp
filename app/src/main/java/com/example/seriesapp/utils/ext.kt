@@ -39,27 +39,10 @@ fun getStr():String{
     return currentTimeStamp + Constants.PRIVATE_KEY + Constants.API_KEY
 }
 
-fun <M,T,H> loadImageGeneric(view: M, character: T, format: H, imageLoadedListener: () ->Unit){
+fun <M> loadImageGeneric(view: M, completeUrl: String, imageLoadedListener: () ->Unit){
     try {
-        var url :String=""
-        var extension:String=""
+
         val genericView:View = view as ImageView
-
-        if(character is Result){
-            (character as Result).apply {        //i pass T type object so to be generic and i cast it to Result in order to use its attributes
-                url = if(!thumbnail.path.contains("https"))
-                    thumbnail.path.replace("http", "https")
-                else
-                    thumbnail.path
-
-                extension=thumbnail.extension
-            }
-        }
-
-
-
-        val completeUrl = "$url/${format.toString()}.$extension"
-
         Glide.with(genericView.context).load(completeUrl)
             .apply(RequestOptions().transform(FitCenter(), GranularRoundedCorners(16.px.toFloat(), 0.toFloat(), 0.toFloat(), 16.px.toFloat())))
             .skipMemoryCache(true)
